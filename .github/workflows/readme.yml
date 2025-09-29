@@ -22,7 +22,7 @@ jobs:
         run: sed -i '3,999d' README.md
         
       - name: Testing
-        run: ./gradlew test >> README.md
+        run: ./Java/githubAction/gradlew test >> README.md
       - name: Commit automático del README
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
