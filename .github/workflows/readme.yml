@@ -19,7 +19,7 @@ jobs:
 
 
       - name: Cleaning the readme
-        run: sed -i '3,999' README.md
+        run: sed -i '3,999d' README.md
         
       - name: Testing
         run: ./gradlew test >> README.md
