@@ -16,8 +16,6 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '21'
-      - name: Instalation of gradlew
-        run: apt install gradlew
 
 
       - name: Cleaning the readme
