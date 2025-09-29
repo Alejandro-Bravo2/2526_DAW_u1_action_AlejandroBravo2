@@ -13,5 +13,5 @@ jobs:
           distribution: 'temurin'
           java-version: '21'
       - name: Generate documentation
-        run: javadoc -d doc/documentacion githubAction/src/main/java/org/example/githubaction/*.java
+        run: javadoc -d doc/documentacion Java/githubAction/src/main/java/org/example/githubaction/*.java
     
