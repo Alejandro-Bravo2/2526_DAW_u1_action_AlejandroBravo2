@@ -9,7 +9,6 @@ public class Calculadora {
 
     public Calculadora(){}
 
-
     /**
      * Método encargado de sumar dos numeros int y devolver el resultado en int
      * @param numero1 Primer número a sumar
