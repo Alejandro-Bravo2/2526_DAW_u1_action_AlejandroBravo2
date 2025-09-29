@@ -1,0 +1,32 @@
+name: generateTestReadme
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-java@v5
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+      - name: Instalation of gradlew
+        run: apt install gradlew
+
+
+      - name: Cleaning the readme
+        run: sed -i '3,999' README.md
+        
+      - name: Testing
+        run: ./gradlew test >> README.md
+      - name: Commit automático del README
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Update DOC con la nueva documentación"
+          file_pattern: 'doc/documentacion/**'
