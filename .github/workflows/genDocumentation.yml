@@ -21,5 +21,5 @@ jobs:
       - name: Commit automático del README
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Update DOC con la nueva documentación"
-          file_pattern: 'doc/documentacion/**'
+          commit_message: "Update README.md con los nuevos resultados de los test"
+          file_pattern: 'README.md'
