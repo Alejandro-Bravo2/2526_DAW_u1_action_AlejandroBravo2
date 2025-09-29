@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"org.example.githubaction","l":"Calculadora"},{"p":"org.example.githubaction","l":"GithubActionApplication"}];updateSearchResults();
