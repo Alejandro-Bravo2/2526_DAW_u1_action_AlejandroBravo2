@@ -12,7 +12,6 @@ public class GithubActionApplication {
         System.out.println(calc.sumar(1,1));
 
 
-
         System.out.println("Probando funcionalidad de restar 1 -1");
         System.out.println(calc.restar(1,1));
     }
