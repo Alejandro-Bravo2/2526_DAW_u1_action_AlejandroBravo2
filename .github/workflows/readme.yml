@@ -21,7 +21,7 @@ jobs:
       - name: Generar documentación
         uses: cicirello/javadoc-cleanup@v1.3.7
         with:
-          path-to-root: docs
+          path-to-root: doc
         
       - name: Commit automático del README
         uses: stefanzweifel/git-auto-commit-action@v5
