@@ -16,10 +16,11 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '21'
-      - name: Generate documentation
-        run: javadoc -d doc/documentacion Java/githubAction/src/main/java/org/example/githubaction/*.java
-      - name: Commit automático del README
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "Update README.md con los nuevos resultados de los test"
-          file_pattern: 'README.md'
+      - name: Setup gradle
+        uses: gradle/gradle-build-action@v2
+      - name: Build gradle
+        uses: ./gradlew build
+
+      - name: Test de java
+        run: ./gradlew test
+
