@@ -21,7 +21,7 @@ jobs:
 
         
       - name: Build gradle
-        run: ./gradlew build
+        run: cd Java/githubAction && ./gradlew build
 
       - name: Ejecutnado tests
         run: cd Java/githubAction && ./gradlew test
