@@ -2,7 +2,9 @@ name: Test
 on:
   push:
     branches: [main]
-
+defaults:
+      run:
+        working-directory: Java/githubAction
 permissions:
   contents: write
 
@@ -21,7 +23,7 @@ jobs:
 
         
       - name: Build gradle
-        run: cd Java/githubAction && ./gradlew build
+        run: ./gradlew build
 
       - name: Ejecutnado tests
         run: cd Java/githubAction && ./gradlew test
