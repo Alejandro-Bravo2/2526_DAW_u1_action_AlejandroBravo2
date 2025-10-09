@@ -17,12 +17,12 @@ jobs:
           distribution: 'temurin'
           java-version: '21'
 
-
-      - name: Cleaning the readme
-        run: sed -i '3,999d' README.md
         
-      - name: Testing
-        run: cd Java/githubAction && ./gradlew test >> README.md
+      - name: Generar documentación
+        uses: cicirello/javadoc-cleanup@v1.3.7
+        with:
+          path-to-root: doc
+        
       - name: Commit automático del README
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
