@@ -20,6 +20,8 @@ jobs:
         run: cd Java/githubAction
       - name: Setup gradle
         uses: gradle/gradle-build-action@v2
+      - name: Asignación de permisos
+        run: chmod +x ./gradlew
       - name: Build gradle
         uses: ./gradlew build
 
