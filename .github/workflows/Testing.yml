@@ -22,7 +22,7 @@ jobs:
         uses: gradle/gradle-build-action@v2
         
       - name: Ejecutnado tests
-        run: cd Java/githubAction && ./gradlew test
+        run: ./gradlew test
         
       - name: Build gradle
         run: ./gradlew build
