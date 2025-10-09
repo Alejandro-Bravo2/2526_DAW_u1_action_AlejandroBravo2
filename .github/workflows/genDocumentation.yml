@@ -16,8 +16,6 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '21'
-      - name: Cambiar de directorio
-        run: cd Java/githubAction
       - name: Setup gradle
         uses: gradle/gradle-build-action@v2
       - name: Asignación de permisos
