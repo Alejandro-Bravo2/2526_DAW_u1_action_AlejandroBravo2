@@ -20,6 +20,7 @@ jobs:
         uses: gradle/gradle-build-action@v2
       - name: Asignación de permisos
         run: cd Java/githubAction && ./gradlew test
+        
       - name: Build gradle
         run: ./gradlew build
 
