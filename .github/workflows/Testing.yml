@@ -18,11 +18,13 @@ jobs:
           java-version: '21'
       - name: Setup gradle
         uses: gradle/gradle-build-action@v2
-      - name: Asignación de permisos
-        run: cd Java/githubAction && ./gradlew test
+
         
       - name: Build gradle
         run: ./gradlew build
+
+      - name: Ejecutnado tests
+        run: cd Java/githubAction && ./gradlew test
 
       - name: Test de java
         run: ./gradlew test
