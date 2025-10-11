@@ -1,6 +1,6 @@
 from datetime import datetime
 
-with open("salidaEjecucion.txt", "r", encoding="utf-8") as archivo:
+with open("salidaEjecucion.txt", "rw", encoding="utf-8") as archivo:
     contenido = archivo.read()
     lineas = contenido.split("\n")
     if ("> Task :test FAILED" in lineas):
