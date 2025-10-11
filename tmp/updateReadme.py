@@ -12,3 +12,4 @@ with open("../../ftp/salidaEjecucion.txt", "r", encoding="utf-8") as archivo:
             readme.write(f"## Resultado del test, Fecha: {datetime.now()}\n")
             readme.write(f"✅ Tests correctos\n")        
         
+
