@@ -4,7 +4,7 @@
 > Task :compileTestJava UP-TO-DATE
 > Task :processTestResources NO-SOURCE
 > Task :testClasses UP-TO-DATE
-> Task :test
+> Task :test UP-TO-DATE
 
 BUILD SUCCESSFUL in 1s
-4 actionable tasks: 1 executed, 3 up-to-date
+4 actionable tasks: 4 up-to-date
