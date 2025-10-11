@@ -35,5 +35,11 @@ jobs:
         run: ./gradlew test > ../../salidaEjecucion.txt
       - name: Actualizar readme con nuevos test
         run: python3 ../../tmp/updateReadme.py
+
+      - name: Commit automático del README
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Añadido la línea de test en el readme"
+          file_pattern: '.'
       
 
