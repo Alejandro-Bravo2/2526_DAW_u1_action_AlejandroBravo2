@@ -9,3 +9,4 @@ with open("salidaEjecucion.txt", "rw", encoding="utf-8") as archivo:
     else:
         archivo.write(f"Resultado del test, Fecha: ${datetime.now()}")
         archivo.write(f"✅ Tests correctos")        
+        
