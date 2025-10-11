@@ -388,3 +388,5 @@ He implementado la mejora de que al realizar push automáticamente el programa e
 ✅ Tests correctos
 ## Resultado del test, Fecha: 2025-10-11 14:53:07.637420
 ✅ Tests correctos
+## Resultado del test, Fecha: 2025-10-11 15:19:02.711710
+❌ Tests fallidos
