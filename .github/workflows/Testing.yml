@@ -32,6 +32,8 @@ jobs:
       - name: Build gradle
         run: ./gradlew build
       - name: Ejecutnado tests
-        run: ./gradlew test
+        run: ./gradlew test > ../../salidaEjecucion.txt
+      - name: Actualizar readme con nuevos test
+        run: python3 ../../tmp/updateReadme.py
       
 
