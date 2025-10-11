@@ -28,6 +28,8 @@ jobs:
       - name: Setup gradle
         uses: gradle/gradle-build-action@v2
 
+      - name: Build gradle
+        run: ./gradlew build
 
       - name: Ejecutnado tests
         run: ./gradlew test > ../../tmp/salidaEjecucion.txt
