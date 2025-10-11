@@ -19,7 +19,7 @@ class GithubActionApplicationTests {
     @Test
     void sumar() {
         int resultado = calc.sumar(1,2);
-        assertEquals(3,resultado);
+        assertEquals(4,resultado);
     }
 
 
