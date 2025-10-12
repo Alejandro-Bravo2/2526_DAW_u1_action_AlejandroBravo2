@@ -366,3 +366,5 @@ Este proyecto sirve para aprender a usar GitHub Actions 🚀
 ✅ Tests correctos
 ## Resultado del test, Fecha: 2025-10-11 15:19:02.711710
 ❌ Tests fallidos
+## Resultado del test, Fecha: 2025-10-12 11:45:16.752119
+❌ Tests fallidos
