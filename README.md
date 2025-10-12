@@ -16,26 +16,44 @@ La actividad consiste en configurar un github action para que realize ciertas ac
 
 ## Instrucciones de Compilación y Ejecución
 1. **Requisitos Previos:**
-   - python3
-   - Librería de python: discord_webhook
-   - Librería de python: dotenv
+   - Java
+   - JVM 23
 
-3. **Pasos para Ejecutar el Código:**
+2. **Pasos para Ejecutar el Código:**
    ```
-   pytest -q
+   java -jar nombreArchivo.jar
    ```
+
+3. **Pasos para ejecutar los test:**
+  ```
+  ./gradlew test
+  ````
+
+
 ## Desarrollo de la Actividad
 ### Descripción del Desarrollo
-Se ha abordado la actividad realizando uso de try y except más el programa principal para de esta forma 
-aprender a usar esas funcionalidades en programas del día a día.
+La actividad se enfoca en aprender a usar github action para automatizar procesos que normalmente tendríamos que realizar nosotros.
+
 ### Código Fuente
-https://github.com/IES-Rafael-Alberti/2425-u2-2-3-excepciones-Alejandro-Bravo2/tree/master/src
+
+https://github.com/Alejandro-Bravo2/2526_DAW_u1_action_AlejandroBravo2/blob/5c28bd4be08ccbaafcf948805846eea937260974/Java/githubAction/src/main/java/org/example/githubaction/Calculadora.java#L8-L36
+
+https://github.com/Alejandro-Bravo2/2526_DAW_u1_action_AlejandroBravo2/blob/5c28bd4be08ccbaafcf948805846eea937260974/Java/githubAction/src/main/java/org/example/githubaction/GithubActionApplication.java#L6-L18
+
+
+###### Tests:
+
+https://github.com/Alejandro-Bravo2/2526_DAW_u1_action_AlejandroBravo2/blob/5c28bd4be08ccbaafcf948805846eea937260974/Java/githubAction/src/test/java/org/example/githubaction/GithubActionApplicationTests.java#L10-L32
+
 
 ## Documentación Adicional
 - **Manual de Usuario:** https://github.com/Alejandro-Bravo2
 
 ## Conclusiones
-He aprendido a usar try y except en programas del día a día.
+
+He aprendido a usar github action para automatizar la realización de mis tests y documentación de mi código de forma automática. También he aprendido a usar actions creados por la comunidad en el marketplace de github actions.
+
+
 
 
 ---
@@ -138,66 +156,19 @@ Este proyecto sirve para aprender a usar GitHub Actions 🚀
 *Aún no ejecutados...*
 ```
 
-### main.py   
-
-Un ejemplo básico, que contiene una función saludo.  Puedes modificar la función cuando quieres que falle. 
-
-```python
-def saludo(nombre: str) -> str:
-    return f"Hola, {nombre}!"
-```
-
-### test\_main.py    
-
-Un test básico. 
-
-```python
-from main import saludo
-
-def test_saludo():
-    assert saludo("Mundo") == "Hola, Mundo!"
-```
-
 ---
 
 ## 🐍 Script en Python (`update_readme.py`)
 
 Script en python. Este script ejecuta los tests y actualiza el README:
 
-```python
-import subprocess
-
-def run_tests():
-    try:
-        subprocess.check_call(["pytest", "-q"])
-        return "✅ Tests correctos"
-    except subprocess.CalledProcessError:
-        return "❌ Tests fallidos"
-
-def update_readme(status: str):
-    with open("README.md", "r", encoding="utf-8") as f:
-        lines = f.readlines()
-
-    new_lines = []
-    for line in lines:
-        new_lines.append(line)
-        if line.strip() == "## Estado de los tests":
-            new_lines.append(status + "\n")
-            break
-
-    with open("README.md", "w", encoding="utf-8") as f:
-        f.writelines(new_lines)
-
-if __name__ == "__main__":
-    status = run_tests()
-    update_readme(status)
-```
+https://github.com/Alejandro-Bravo2/2526_DAW_u1_action_AlejandroBravo2/blob/5c28bd4be08ccbaafcf948805846eea937260974/tmp/updateReadme.py#L3-L14
 
 👉 Lo que hace:
 
-1. Ejecuta los tests con `pytest`.
+1. Lee del archivo que contiene el resultado de los test
 2. Según el resultado, genera un estado ✅ o ❌.
-3. Modifica el `README.md` justo debajo de la sección `## 3stado de los tests`.
+3. Modifica el `README.md` justo debajo de la sección `## Estado de los tests`.
 
 ---
 
@@ -379,8 +350,13 @@ Con estas extensiones conseguireis:
 Este proyecto sirve para aprender a usar GitHub Actions 🚀
 
 ## Implementaciones realizadas
-He implementado la mejora de que al realizar push automáticamente el programa enviará una notificación a un webhook de discord informando sobre si han resultado exitosamente los test o no. También he implementado la mejora de que informe mejor sobre la fecha y hora en la que se realizan los test. Para realizer un reporte más detallado sobre los test implementé un sistema en el que guarda en el fichero report.md más información sobre los test.
 
+- Automatización de ejecución de los tests
+- Generación de resultados de los test en readme
+- **Mejora** Agregación al resultado de los test la fecha
+- Generación de documentación del código en html
+- Generación de documentación del código en markdown
+- Generación de página web estática vinculada al github
 
 # TESTS
 
