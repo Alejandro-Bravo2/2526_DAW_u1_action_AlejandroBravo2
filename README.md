@@ -415,5 +415,5 @@ https://github.com/Alejandro-Bravo2/2526_DAW_u1_action_AlejandroBravo2/blob/e48c
 ✅ Tests correctos
 ## Resultado del test, Fecha: 2025-10-11 15:19:02.711710
 ❌ Tests fallidos
-## Resultado del test, Fecha: 2025-10-12 11:45:16.752119
+## Resultado del test, Fecha: 2025-12-15 16:22:35.408792
 ❌ Tests fallidos
