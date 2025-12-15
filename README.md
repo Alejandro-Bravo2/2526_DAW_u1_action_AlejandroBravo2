@@ -358,6 +358,55 @@ Este proyecto sirve para aprender a usar GitHub Actions 🚀
 - Generación de documentación del código en markdown
 - Generación de página web estática vinculada al github
 
+### Identificación de herramientas de generación de documentación. ¿Qué herramienta o generador (p. ej., Sphinx, pdoc, Javadoc, Doxygen, Dokka) utilizaste en el workflow para crear la documentación en /docs?
+
+Se ha usado la generación con javadoc, utilicé el workfow de cicirello/javadoc-cleanup@v1.3.7 que sirve para generar la documentación de todos los ficheros java de un directorio y le indicas la carpeta de destino en mi caso /docs y te guarda alli toda la documentación.
+
+
+### Documentación de componentes. Muestra un fragmento del código con comentarios/docstrings estructurados (p. ej., :param, :return: o etiquetas equivalentes) que haya sido procesado por la herramienta. Comenta que estilo de documentación has utlicado: (p. ej., reStructuredText, Google Style, KDoc)
+
+He usado el estilo de documentación KDoc que la forma de su documentación es escribiendo la propiedad que quieres documentar (variable) y luego una descripción, tambien se documenta los return, excepciones y otras propiedades.
+
+https://github.com/Alejandro-Bravo2/2526_DAW_u1_action_AlejandroBravo2/blob/e48c0a5e81d25a1652bc03115dae4954d4721e58/Java/githubAction/src/main/java/org/example/githubaction/Calculadora.java#L17-L24
+
+### Colaboración. Explica cómo GitHub facilita mantener la documentación (actualizaciones del README.md y de /docs) cuando colaboran varias personas (PRs, reviews, checks de CI, protección de ramas).
+
+Facilita mantener un control cuando varias personas trabajan en el mismo repositorio atraves de los pull request(son unas peticiones que se le mandan a los administradores del repositorio y que ellos pueden ver tus cambios y el motivo de dichos cambios, de esta forma se pueden hacer proyectos open source y que muchas personas contribuyan a dicho proyecto), las review son una forma de exigir como un chequeo de sanidad osea lo que hace es que permite que en el repositorio haya un control para los pull request y que de esta forma tengan un requisito antes de ser aceptados como por ejemplo un número de aprobaciones para dicho pull request, el chek ci son pruebas automáticas que lo que permiten es que revisen el código por cada commit y de esta forma evitar muchos errores. La protección de ramas es la forma que github implentó para evitar que los nuevos desarrolladores no hicieran un git push origin main --force al main y fastidar el trabajo de otros usuarios, lo que previene es la sobreescritura de una rama.
+
+
+### Control de versiones. Muestra mensajes de commit que evidencien el nuevo workflow. ¿Son claros y descriptivos? Justifícalo. Ademas de un conjunto de mensajes de tus commits.
+
+Pruebas de los mensajes de commit:
+![alt text](tmp/image.png)
+
+
+### Accesibilidad y seguridad. ¿Qué medidas/configuración del repositorio garantizan que solo personal autorizado accede al código y la documentación? (p. ej., repositorio privado, equipos, roles, claves/secretos, branch protection).
+
+La protección del repositorio es que solamente yo puedo hacer cambios en el repositorio ya que soy el único con permisos, en cuanto a las claves se utiliza un .env para dichas claves.
+
+
+### Instalación/uso documentados. Indica dónde en el README.md explicas el funcionamiento del workflow y dónde detallas las herramientas y comandos de documentación.
+
+
+Este workflow lo que hace es trabajar con un ubuntu (ultima versión), luego se hace un checkout@5 para trarse todo el contenido del repositorio, y con el @setup-java se instala java y lo configura en concreto la versión 21 de temurin ya que es la que yo uso.
+
+Posteriormente usa el github action de cicirello/javadoc-cleanup@v1.3.7 para generar dicha documentación de java y guardarla en el directorio doc y con el action stefanzweifel/git-auto-commit-action@v5 realiza un commit para guardar los cambios y le pone de nombre a dicho commit: Commit automático del README
+
+https://github.com/Alejandro-Bravo2/2526_DAW_u1_action_AlejandroBravo2/blob/e48c0a5e81d25a1652bc03115dae4954d4721e58/.github/workflows/readme.yml#L1-L30
+
+
+
+Para el workflow de testing se ha realizado en un ubuntu latest y sigue el mismo flujo de instalarse java que en el primer workflow, luego se instala python ya que para la actualización del readme he usado un script en python. Luego con el @setup-gradle lo que hace es instalar gradle y luego con el build lo ejecutaría.
+
+Luego con este comando: ./gradlew test > ../../tmp/test-report.md || true lo que haría es ejecutar dicho gradlew para los test y guardar el reporte en un fichero test-report.md.
+
+Luego se ejecutaría el script de python para que actualizara el readme agregando la nueva información sacada de dicho fichero con los test.
+
+
+Luego se ejcutaría el action de stefanzweifel/git-auto-commit-action@v5 que lo que hace es realizar dicho commit y subirlo a la rama main y usando el nombre de actualización de README.
+
+https://github.com/Alejandro-Bravo2/2526_DAW_u1_action_AlejandroBravo2/blob/e48c0a5e81d25a1652bc03115dae4954d4721e58/.github/workflows/Testing.yml#L1-L44
+
 # TESTS
 
 ## 1 Estado de los tests

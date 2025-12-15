@@ -28,5 +28,4 @@ class GithubActionApplicationTests {
         int resultado = calc.restar(2,2);
         assertEquals(0,resultado);
     }
-
 }
